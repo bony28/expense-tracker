@@ -1,0 +1,19 @@
+<form class="expense-form">
+  <input
+    type="text"
+    placeholder="Enter description"
+    name="description"
+    [(ngModel)]="expenseText"
+  />
+  <input
+    type="number"
+    placeholder="Amount"
+    name="amount"
+    [(ngModel)]="expenseAmount"
+  />
+  <select name="type" [(ngModel)]="selectedValue">
+    <option value="expense">Expense</option>
+    <option value="income">Income</option>
+  </select>
+  <button type="submit" (click)="handleAdd()">Add</button>
+</form>

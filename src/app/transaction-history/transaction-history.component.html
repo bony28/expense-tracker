@@ -1,0 +1,15 @@
+<div class="expense-list">
+  <h3>Transaction History</h3>
+  @for (item of expenseService.expensesList; track item.id) {
+  <ul>
+    <li
+      [ngClass]="
+        item.type === 'income' ? 'expense-item income' : 'expense-item expense'
+      "
+    >
+      <span>{{ item.name }}</span>
+      <span>{{ item.amount | amount }}</span>
+    </li>
+  </ul>
+  }
+</div>
