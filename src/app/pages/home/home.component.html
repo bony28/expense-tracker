@@ -1,9 +1,18 @@
-<div class="expense-tracker">
-  <app-header></app-header>
+<div style="display: flex">
+  <div class="expense-tracker">
+    <app-header headerName="Expense Tracker"></app-header>
 
-  <app-balance></app-balance>
+    <app-balance></app-balance>
 
-  <app-expenses-add></app-expenses-add>
+    <app-expenses-add></app-expenses-add>
 
-  <app-transaction-history></app-transaction-history>
+    <app-transaction-history></app-transaction-history>
+  </div>
+
+  <div class="expense-tracker">
+    <app-header headerName="Category wise spends"></app-header>
+
+    <app-balance></app-balance>
+    <app-category></app-category>
+  </div>
 </div>

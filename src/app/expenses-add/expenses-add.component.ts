@@ -14,17 +14,25 @@ export class ExpensesAddComponent {
   expenseAmount: number = 0;
   selectedValue: string = '';
 
+  selectedCategory: string = '';
+
   handleAdd() {
     console.log('shdsg');
     this.expenseService.add(
-      this.expenseText,
+      this.selectedCategory,
       this.expenseAmount,
       this.selectedValue
     );
-    this.expenseText = '';
+    this.selectedCategory = '';
     this.expenseAmount = 0;
     this.selectedValue = '';
   }
 
+  ngOnInit() {
+    const selectedItem = this.expenseService.expenseCategory.find(
+      (x) => x.isSelected
+    );
+    this.selectedCategory = selectedItem ? selectedItem.value : '';
+  }
   constructor(public expenseService: ExpensesService) {}
 }

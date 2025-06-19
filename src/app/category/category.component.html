@@ -1,0 +1,12 @@
+<div class="expense-list">
+  <h3>Category wise spends</h3>
+  <ul>
+    @for (item of categoryWiseTotal(); track item.name) {
+    <p>{{ categoryWiseTotal() }}</p>
+    <li class="expense-item expense">
+      <span>{{ item.name }}</span>
+      <span>{{ item.total | amount }}</span>
+    </li>
+    }
+  </ul>
+</div>

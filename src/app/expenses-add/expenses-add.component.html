@@ -1,10 +1,10 @@
 <form class="expense-form">
-  <input
-    type="text"
-    placeholder="Enter description"
-    name="description"
-    [(ngModel)]="expenseText"
-  />
+  <select name="expenseName" id="" [(ngModel)]="selectedCategory">
+    @for (item of expenseService.expenseCategory; track item.value) {
+    <option [value]="item.value">{{ item.text }}</option>
+    }
+  </select>
+
   <input
     type="number"
     placeholder="Amount"
